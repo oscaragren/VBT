@@ -9,6 +9,6 @@ class CustomTrainer(SegmentationTrainer):
         self.scheduler = LambdaLR(self.optimizer, lr_lambda=self.lf)        
 
 
-model = YOLO("yolov9c-seg.yaml")
+model = YOLO("yolov9c-seg.yaml") # This is the model
 
 results = model.train(trainer=CustomTrainer, data="data.yaml", epochs=100, imgsz=640, device="mps", plots=True, lr0=0.001) # mps is for Apple M1 and M2
